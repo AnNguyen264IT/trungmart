@@ -32,19 +32,19 @@ function Footer({ data }) {
                     <div className={cx('footerInfo')}>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon icon={faLocationDot} />
                                     <p>Trường Đại học Khoa học Huế</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     <p>trungmart75@gmail.com</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon icon={faPhone} />
                                     <p>0367376403</p>
                                 </a>
@@ -63,30 +63,30 @@ function Footer({ data }) {
                     <div className={cx('footerRequire')}>
                         <ul>
                             <li>
-                                <a href="#">Chính sách giao hàng</a>
+                                <a href="">Chính sách giao hàng</a>
                             </li>
                             <li>
-                                <a href="#">Điều khoản và điều kiện sử dụng</a>
+                                <a href="">Điều khoản và điều kiện sử dụng</a>
                             </li>
                             <li>
-                                <a href="#">Chính sách bảo mật</a>
+                                <a href="">Chính sách bảo mật</a>
                             </li>
                         </ul>
                     </div>
                     <div className={cx('footerSocial')}>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon icon={faSquareInstagram} />
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon icon={faFacebook} />
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <FontAwesomeIcon
                                         icon={faFacebookMessenger}
                                     />
