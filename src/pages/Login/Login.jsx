@@ -3,7 +3,7 @@ import styles from './Login.module.scss';
 import Button from '~/components/Button/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { listUser,listinfoSell } from '~/constant/mock-data';
+import { listUser, listinfoSell } from '~/constant/mock-data';
 const cx = classNames.bind(styles);
 
 function Login() {
@@ -25,29 +25,28 @@ function Login() {
         const user = listUser.find(
             (user) => user.id === id && user.password === password,
         );
-         const sell = listinfoSell.find(
+        const sell = listinfoSell.find(
             (sell) => sell.id === id && sell.password === password,
         );
         // code kiểm tra tk đn sell
-       if (!user && !sell) {
+        if (!user && !sell) {
             setError('Thông tin đăng nhập không đúng!');
             return;
         }
-        if(sell){
+        if (sell) {
             localStorage.setItem('idSell', sell.id);
             setError('');
             navigate('/ProductSell');
-        }else if (user.roll === 'admin') {
+        } else if (user.roll === 'admin') {
             localStorage.setItem('idAd', user.id);
             setError('');
             navigate('/StatisAdmin');
-        }else{
-                localStorage.setItem('userId', user.id);
-                setError('');
-                navigate('/UserHome');
-            }
-            
-        } 
+        } else {
+            localStorage.setItem('userId', user.id);
+            setError('');
+            navigate('/UserHome');
+        }
+    };
     return (
         <div className={cx('container')}>
             <h2 className={cx('title')}>TrungMart</h2>
@@ -66,7 +65,32 @@ function Login() {
                     Đăng ký
                 </p>
             </div>
+            <div className={cx('demo-account')}>
+                <h4>Tài khoản dùng thử</h4>
 
+                <div>
+                    <strong>Admin</strong>
+                    <p>ID: 111</p>
+                    <p>Mật khẩu: 123</p>
+                </div>
+
+                <div>
+                    <strong>Khách hàng</strong>
+                    <p>ID: 1001</p>
+                    <p>Mật khẩu: a123</p>
+                </div>
+
+                <div>
+                    <strong>Chủ cửa hàng</strong>
+                    <p>ID: 1</p>
+                    <p>Mật khẩu: 123</p>
+                </div>
+
+                <small>
+                    * Đây là website demo chỉ sử dụng dữ liệu giả (Mock Data),
+                    không kết nối cơ sở dữ liệu.
+                </small>
+            </div>
             <form className={cx('form')} onSubmit={handleLogin}>
                 {isRegister && (
                     <div className={cx('radio-group')}>
